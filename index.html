@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveBet — Apuestas en vivo</title>
+  <link rel="stylesheet" href="apuestas.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">🎯 Live<span>Bet</span></a>
+      <div class="balance">💰 Saldo: <strong id="balance">$100.000</strong></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Apuestas deportivas en vivo</h1>
+      <p>Partidos en tiempo real. Saldo virtual · demo educativa.</p>
+      <div class="leagues" id="leagues">
+        <button class="league active" data-sport="basketball" data-league="nba">🏀 NBA</button>
+        <button class="league" data-sport="soccer" data-league="eng.1">⚽ Premier</button>
+        <button class="league" data-sport="football" data-league="nfl">🏈 NFL</button>
+        <button class="league" data-sport="soccer" data-league="esp.1">⚽ LaLiga</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="main-head">
+      <h2 id="leagueTitle">Partidos</h2>
+      <button class="refresh" id="refresh">🔄 Actualizar</button>
+    </div>
+    <div id="status" class="status"></div>
+    <div class="matches" id="matches"></div>
+  </main>
+
+  <!-- Modal de apuesta -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal" id="modal">
+    <h3 id="modalTitle">Tu apuesta</h3>
+    <p class="modal-pick" id="modalPick"></p>
+    <label>Monto a apostar</label>
+    <input type="number" id="stake" min="1000" step="1000" value="10000">
+    <div class="modal-calc">
+      Cuota: <strong id="modalOdd">—</strong> ·
+      Ganancia potencial: <strong id="modalWin">$0</strong>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="cancelBet">Cancelar</button>
+      <button class="btn" id="confirmBet">Apostar</button>
+    </div>
+  </div>
+
+  <!-- Mis apuestas -->
+  <section class="container">
+    <h2>Mis apuestas</h2>
+    <div id="myBets" class="my-bets"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>⚠️ Demo educativa con saldo virtual. No se apuesta dinero real.</p>
+      <p>Si el juego deja de ser diversión, busca ayuda. Juego responsable (+18).</p>
+    </div>
+  </footer>
+
+  <script src="apuestas.js"></script>
+</body>
+</html>
